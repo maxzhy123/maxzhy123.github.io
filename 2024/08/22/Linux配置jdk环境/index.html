@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>Mamoz-blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">Mamoz-blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+    
+        <div class="post-main-title">
+            Linux配置jdk环境
+        </div>
+        <div class="post-meta">
+            2024-08-22
+        </div>
+        <div class="post-md">
+            <h1 id="Linux配置jdk环境"><a href="#Linux配置jdk环境" class="headerlink" title="Linux配置jdk环境"></a>Linux配置jdk环境</h1><h2 id="1-创建目录"><a href="#1-创建目录" class="headerlink" title="1) 创建目录"></a>1) 创建目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /usr/local/jdk</span><br><span class="line"><span class="built_in">cd</span> /usr/local/jdk</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-下载jdk"><a href="#2-下载jdk" class="headerlink" title="2) 下载jdk"></a>2) 下载jdk</h2><ul>
+<li><strong>推荐使用 <a target="_blank" rel="noopener" href="https://www.azul.com/downloads/?version=java-17-lts&os=linux&package=jdk#zulu">zulu-jdk</a></strong></li>
+<li>选择  Linux    x86 64-bit    JDK    Download    <a target="_blank" rel="noopener" href="https://www.azul.com/core-post-download/?endpoint=zulu&uuid=809f9a4b-dc14-4cea-aa3d-f7e76ae8a346">.tar.gz</a></li>
+</ul>
+<p>&#96; Zulu JDK 是由 Azul Systems 提供的一个企业级的 OpenJDK 发行版，它提供了长期支持、安全更新和性能优化。以下是推荐使用 Zulu JDK 的几个原因：</p>
+<ol>
+<li><strong>长期支持</strong>：Zulu JDK 提供了长期支持（LTS）版本，这意味着它们将得到至少五年的支持，包括安全更新和错误修复，为组织提供了可靠的 Java 应用运行环境 16。</li>
+<li><strong>安全性</strong>：Zulu JDK 包含了安全增强和错误修复，这些在标准 OpenJDK 构建中可能不存在，从而使得在 Zulu JDK 上运行的应用程序更加安全，减少了受到攻击的风险 16。</li>
+<li><strong>性能优化</strong>：Azul Zulu 利用 Azul 自定义的即时编译器（JIT）进行性能优化，这可以显著提高 Java 应用程序的性能 16。</li>
+<li><strong>广泛的平台支持</strong>：Zulu JDK 适用于包括 Windows、Linux、macOS、ARM 和 x86 在内的各种平台和架构，便于开发者和组织在不同平台上部署 Java 应用程序 16。</li>
+<li><strong>稳定性和性能</strong>：与其他 OpenJDK 发行版相比，Zulu JDK 因其高稳定性和性能而闻名，并使用自己的 C4 垃圾收集器 16。</li>
+<li><strong>商业支持</strong>：Azul Systems 提供商业支持和及时更新，这对于需要专业支持的企业来说是一个重要的优势 16。</li>
+<li><strong>兼容性</strong>：Zulu JDK 是 Oracle JDK 的无缝替代品，易于迁移，同时提供与 Java 标准兼容的环境 13。</li>
+<li><strong>社区和企业支持</strong>：Zulu JDK 得到了包括 IBM、Amazon 和 SAP 在内的大型企业的支持和使用 16。</li>
+<li><strong>易于获取</strong>：Zulu JDK 可以通过多种安装程序和包格式获取，如 tar、deb、msi、dmg 等，简化了安装过程 16。</li>
+<li><strong>附加工具</strong>：Zulu JDK 包括 Java Flight Recorder 和 Mission Control 等工具，特别是对于 Java 8 版本 16。</li>
+</ol>
+<p>综上所述，Zulu JDK 以其稳定性、安全性、性能优化和广泛的平台支持，成为开发和运行企业级 Java 应用程序的理想选择。&#96;</p>
+<h2 id="3-解压"><a href="#3-解压" class="headerlink" title="3) 解压"></a>3) 解压</h2><ul>
+<li><p>将下载好的jdk上传到 <code>/usr/local/jdk</code> 目录</p>
+</li>
+<li><p>解压jdk文件:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf zulu17.52.17-ca-jdk17.0.12-linux_x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>原来的文件名太长了, 修改文件名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> zulu17.52.17-ca-jdk17.0.12-linux_x64  jdk17.0.12</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-配置环境变量"><a href="#4-配置环境变量" class="headerlink" title="4) 配置环境变量"></a>4) 配置环境变量</h2><ul>
+<li><p>修改<code>/etc/profile</code> 文件</p>
+</li>
+<li><p>使用vim在文件末尾添加环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#G 跳转到文件末尾 $ 跳转到行尾 o下一行</span></span><br><span class="line">G $ o</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/local/jdk/jdk17.0.12</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>然后按<code>esc</code>退出插入模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br><span class="line"><span class="comment">#:wq 保存并退出vim</span></span><br><span class="line"><span class="comment">#重新加载配置文件</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="5-验证"><a href="#5-验证" class="headerlink" title="5) 验证"></a>5) 验证</h2><p>查看版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p>如果出现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">OpenJDK Runtime Environment Zulu</span><br><span class="line">OpenJDK 64-Bit Server VM Zulu</span><br></pre></td></tr></table></figure>
+
+<p>就是安装成功了</p>
+
+        </div>
+
+    
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 Mamoz-blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這李設計</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
